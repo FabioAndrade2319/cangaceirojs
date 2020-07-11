@@ -3,12 +3,11 @@ class Negociacao {
     //Javascript ainda não proporciona restrição de acesso em OO então utilizamos a convenção
     //do underline para deixar claro que as propriedades não devem ser acessadas diretamente.
 
-    constructor(data, quantidade, valor) {
-        //a data foi alterada para esse formato como programação defensiva, para evitar que a
-        //data possa ser alterada. ref. pág 43
-        this._data = new Date(data.getTime());
-        this._quantidade = quantidade;
-        this._valor = valor;
+    
+    constructor(_data, _quantidade, _valor) {
+        //alterado novamente conforme tópico 2.11 do livro fazendo uso do Object.assign
+        Object.assign(this,{_quantidade,_valor});
+        this._data = new Date(_data.getTime());
         Object.freeze(this);
     }
 
