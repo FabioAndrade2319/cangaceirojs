@@ -1,23 +1,23 @@
 class NegociacaoController {
 
-    adiciona(event) {
-        event.preventDefault();
-
-        alert('Chamei ação no controller');
-
+    constructor() {
         //artifício para deixar o código mais enxuto
         //não é Jquery, somente uma "homenagem".
         let $ = document.querySelector.bind(document);
 
-        let inputData = $('#data');
-        let inputQuantidade = $('#quantidade');
-        let inputValor = $('#valor');
+        this._inputData = $('#data');
+        this._inputQuantidade = $('#quantidade');
+        this._inputValor = $('#valor');
+    }
+    
+    
+    adiciona(event) {       
 
-        console.log(inputData.value);
-        console.log(parseInt(inputQuantidade.value));
-        console.log(parseFloat(inputValor.value));
+        event.preventDefault();
 
-
+        console.log(this._inputData.value);
+        console.log(parseInt(this._inputQuantidade.value));
+        console.log(parseFloat(this._inputValor.value));
 
     }
 }
