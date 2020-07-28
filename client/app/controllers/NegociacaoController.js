@@ -14,12 +14,17 @@ class NegociacaoController {
     
     adiciona(event) {       
 
+        //Para prevenir comportamento padrão e ser possível ler após o preenchimento e envio do form
         event.preventDefault();
         
+        //instancia um objeto de dateConverter para tratar a data
         let converter = new DateConverter();
 
+        //converte o string recebido do formulário, capturado pelo controller, para data
         let data = converter.paraData(this._inputData.value);
+        console.log(data);
 
+        //instacia uma negociação
         let negociacao = new Negociacao(
             data,
             parseInt(this._inputQuantidade.value),
