@@ -18,10 +18,10 @@ class NegociacaoController {
         event.preventDefault();
         
         //instancia um objeto de dateConverter para tratar a data
-        let converter = new DateConverter();
+        // let converter = new DateConverter();
 
         //converte o string recebido do formulário, capturado pelo controller, para data
-        let data = converter.paraData(this._inputData.value);
+        let data = DateConverter.paraData(this._inputData.value);
         console.log(data);
 
         //instacia uma negociação
@@ -31,7 +31,7 @@ class NegociacaoController {
             parseFloat(this._inputValor.value)
         );
         
-        let diaMesAno = converter.paraTexto(negociacao.data);
+        let diaMesAno = DateConverter.paraTexto(negociacao.data);
 
         console.log(diaMesAno);
         console.log(negociacao);
