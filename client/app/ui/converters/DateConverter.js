@@ -7,9 +7,7 @@ class DateConverter {
 
     //getDate() retorna o dia do mês, getMonth() retorna o mês e getFullYear() retorna o ano com 4 digitos
     static paraTexto (data) {
-        return data.getDate() + '/' + 
-            (data.getMonth() + 1) +
-             '/' + data.getFullYear();
+        return (`${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`);
 
     }
 
