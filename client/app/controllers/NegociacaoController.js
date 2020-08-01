@@ -8,6 +8,7 @@ class NegociacaoController {
         this._inputData = $('#data');
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
+        this._negociacoes = new Negociacoes();
     }
     
     
@@ -15,26 +16,19 @@ class NegociacaoController {
     adiciona(event) {       
 
         //Para prevenir comportamento padrão e ser possível ler após o preenchimento e envio do form
-        event.preventDefault();
-        
-        //instancia um objeto de dateConverter para tratar a data
-        // let converter = new DateConverter();
-
-        //converte o string recebido do formulário, capturado pelo controller, para data
-        let data = DateConverter.paraData(this._inputData.value);
-        console.log(data);
+        event.preventDefault();   
 
         //instacia uma negociação
         let negociacao = new Negociacao(
-            data,
+            DateConverter.paraData(this._inputData.value),
             parseInt(this._inputQuantidade.value),
             parseFloat(this._inputValor.value)
         );
-        
-        let diaMesAno = DateConverter.paraTexto(negociacao.data);
 
-        console.log(diaMesAno);
-        console.log(negociacao);
+        //inclui a negociacao na lista Negociacoes
+        this._negociacoes.adiciona(negociacao);
+        
+        console.log(this._negociacoes.paraArray());
 
     }
 }
