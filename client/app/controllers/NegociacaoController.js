@@ -10,7 +10,7 @@ class NegociacaoController {
         this._inputValor = $('#valor');
         this._negociacoes = new Negociacoes();
         this._negociacoesView = new NegociacoesView("#negociacoes");
-        this._negociacoesView.update();
+        this._negociacoesView.update(this._negociacoes);
     }
     
     
@@ -20,15 +20,11 @@ class NegociacaoController {
 
         //Para prevenir comportamento padrão e ser possível ler após o preenchimento e envio do form
         event.preventDefault();   
-
-        //instacia uma negociação
-        let negociacao = 
-
+        
         //inclui a negociacao na lista Negociacoes
         this._negociacoes.adiciona(this._criaNegociacao());
+        this._negociacoesView.update(this._negociacoes);
         
-        console.log(this._negociacoes.paraArray());
-
         this._limpaFormulario();
 
     }
