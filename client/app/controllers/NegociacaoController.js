@@ -8,9 +8,9 @@ class NegociacaoController {
         this._inputData = $('#data');
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
-        this._negociacoes = new Negociacoes();
-        this._negociacoesView = new NegociacoesView("#negociacoes");
-        this._negociacoesView.update(this._negociacoes);
+        this._negociacoes = new Negociacoes(); //instancia um array de negociacoes
+        this._negociacoesView = new NegociacoesView("#negociacoes"); //instancia uma view passando o seletor da div de index.html
+        this._negociacoesView.update(this._negociacoes); 
     }
     
     
@@ -23,6 +23,7 @@ class NegociacaoController {
         
         //inclui a negociacao na lista Negociacoes
         this._negociacoes.adiciona(this._criaNegociacao());
+        //atualiza a view 
         this._negociacoesView.update(this._negociacoes);
         
         this._limpaFormulario();

@@ -1,5 +1,6 @@
 class Negociacoes {
 
+    //é uma array de negociações a ser instanciada pela classe NegociacaoController
     constructor() {
 
         this._negociacoes = [];

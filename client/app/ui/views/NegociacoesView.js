@@ -1,12 +1,12 @@
 class NegociacoesView {
 
     constructor (seletor) {
-
+        //no construtor o seletor indica onde em index.html a view será inserida
         this._elemento = document.querySelector(seletor);
     }
 
     update (model) {
-
+        //esse método define o innerHTML do elemento como o template
         this._elemento.innerHTML = this.template(model);
     }
 
