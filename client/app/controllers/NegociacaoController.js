@@ -11,6 +11,7 @@ class NegociacaoController {
         this._negociacoes = new Negociacoes(); //instancia um array de negociacoes
         this._negociacoesView = new NegociacoesView("#negociacoes"); //instancia uma view passando o seletor da div de index.html
         this._negociacoesView.update(this._negociacoes); 
+        this._mensagem = new Mensagem();
     }
     
     
@@ -23,6 +24,8 @@ class NegociacaoController {
         
         //inclui a negociacao na lista Negociacoes
         this._negociacoes.adiciona(this._criaNegociacao());
+        //inclui uma mensagem de sucesso na inclusão
+        this._mensagem.texto = "Negociação adicionada com sucesso";
         //atualiza a view 
         this._negociacoesView.update(this._negociacoes);
         
