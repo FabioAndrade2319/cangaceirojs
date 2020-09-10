@@ -12,6 +12,8 @@ class NegociacaoController {
         this._negociacoesView = new NegociacoesView("#negociacoes"); //instancia uma view passando o seletor da div de index.html
         this._negociacoesView.update(this._negociacoes); 
         this._mensagem = new Mensagem();
+        this._mensagemView = new MensagemView("#mensagemView");
+        this._mensagemView.update(this._mensagem);
     }
     
     
@@ -28,7 +30,7 @@ class NegociacaoController {
         this._mensagem.texto = "Negociação adicionada com sucesso";
         //atualiza a view 
         this._negociacoesView.update(this._negociacoes);
-        
+        this._mensagemView.update(this._mensagem);
         this._limpaFormulario();
 
     }
