@@ -50,4 +50,11 @@ class NegociacaoController {
         );
     }
 
+    apaga() {
+        this._negociacoes.esvazia();
+        this._negociacoesView.update(this._negociacoes);
+        this._mensagem.texto = "Negociações apagadas com sucesso!";
+        this._mensagemView.update(this._mensagem);
+    }
+
 }
