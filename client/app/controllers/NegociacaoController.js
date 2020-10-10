@@ -3,7 +3,7 @@ class NegociacaoController {
     constructor () {
         //artifício para deixar o código mais enxuto
         //não é Jquery, somente uma "homenagem".
-        let $ = document.querySelector.bind(document);
+        const $ = document.querySelector.bind(document);
 
         this._inputData = $('#data');
         this._inputQuantidade = $('#quantidade');

@@ -2,7 +2,7 @@
 //onde serão inicializados todos os objetos necessários.
 
 //cria uma instância de controler
-let controller = new NegociacaoController();
+const controller = new NegociacaoController();
 
 document
     .querySelector('.form')
