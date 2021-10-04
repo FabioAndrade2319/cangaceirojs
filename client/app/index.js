@@ -1,3 +1,6 @@
+//Esse arquivo foi retirado quando foi introduzida a classe Negociacao.js
+
+
 //cria o array campos para capturar o preenchimento
 //utiliza querySelector por ID
 var campos = [
