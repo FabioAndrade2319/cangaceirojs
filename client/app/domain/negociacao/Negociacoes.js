@@ -1,9 +1,10 @@
 class Negociacoes {
 
     //é uma array de negociações a ser instanciada pela classe NegociacaoController
-    constructor() {
+    constructor(armadilha) {
 
         this._negociacoes = [];
+        this._armadilha = armadilha;
 
         Object.freeze(this);
     }
@@ -11,6 +12,8 @@ class Negociacoes {
     adiciona(negociacao) {
 
         this._negociacoes.push(negociacao);
+        //chamando a função armadilha
+        this._armadilha(this);
     }
 
     paraArray() {
@@ -26,6 +29,7 @@ class Negociacoes {
     esvazia () {
 
         this._negociacoes.length = 0;
+        this._armadilha(this);
     }
 
 
