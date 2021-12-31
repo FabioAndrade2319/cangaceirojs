@@ -12,7 +12,7 @@ class NegociacaoController {
         //self é NegociacaoController
         //const self = this; -> Seria uma solução conf. pag.173
 
-        this._negociacoes = new Negociacoes(this, function(model){
+        this._negociacoes = new Negociacoes(model => {
 
             console.log(this);
             this._negociacoesView.update(model);
